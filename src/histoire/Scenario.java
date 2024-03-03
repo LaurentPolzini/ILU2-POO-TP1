@@ -9,14 +9,32 @@ import villagegaulois.Village;
 public class Scenario {
 
 	public static void main(String[] args) {
-//		Village village = new Village("le village des irréductibles", 10, 5);
-//		Chef abraracourcix = new Chef("Abraracourcix", 10, village);
-//		village.setChef(abraracourcix);
+		Village village = new Village("le village des irréductibles", 10, 5);
+		Chef abraracourcix = new Chef("Abraracourcix", 10, village);
+		village.setChef(abraracourcix);
 		Druide druide = new Druide("Panoramix", 2, 5, 10);
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
 		Gaulois bonemine = new Gaulois("Bonemine", 7);
+		
+		System.out.println(village.installerVendeur(bonemine, "fleurs", 5));
+		
+		System.out.println(village.rechercherVendeursProduit("fleurs"));
+		
+		System.out.println(village.rechercherVendeursProduit("oranges"));
+		
+		System.out.println(village.installerVendeur(assurancetourix, "guitares", 2));
+		
+		System.out.println(village.installerVendeur(asterix, "épée", 9));
+		
+		System.out.println(village.rechercherEtal(asterix).acheterProduit(3, bonemine));
+		
+		System.out.println(village.rechercherEtal(asterix).acheterProduit(7, obelix));
+		
+		System.out.println(village.partirVendeur(asterix));
+		
+		System.out.println(village.afficherMarche());
 		
 //		village.ajouterHabitant(bonemine);
 //		village.ajouterHabitant(assurancetourix);
